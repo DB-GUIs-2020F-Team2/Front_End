@@ -40,7 +40,7 @@ class Register extends Component {
 
                         <div className="row justify-content-center">
                             <div className= "form-group col-3 font-weight-bold text-white">
-                                <label htmlFor = "Name">Your Name</label>
+                                <label htmlFor = "Name">Your Name:</label>
                                 <input 
                                     type = "text" 
                                     className = "form-control"
@@ -52,7 +52,7 @@ class Register extends Component {
                         
 
                         <div className= "form-group col-3 font-weight-bold text-white">
-                            <label htmlFor = "phoneNumber">Phone Number</label>
+                            <label htmlFor = "phoneNumber">Phone Number:</label>
                             <input 
                                 type = "text" 
                                 className = "form-control"
@@ -61,7 +61,7 @@ class Register extends Component {
                         </div>
 
                         <div className= "form-group col-3 font-weight-bold text-white">
-                            <label htmlFor = "email">Email</label>
+                            <label htmlFor = "email">Email:</label>
                             <input 
                                 type = "text" 
                                 className = "form-control"
@@ -70,7 +70,7 @@ class Register extends Component {
                         </div>
 
                         <div className= "form-group col-3 font-weight-bold text-white">
-                                <label htmlFor = "department">Department</label> 
+                                <label htmlFor = "department">Department:</label> 
                                 <select 
                                     name="department" 
                                     id="department" 
@@ -93,7 +93,8 @@ class Register extends Component {
                             <button 
                                 type = "button "
                                 className="btn btn-primary btn-lg col-3 m-3"
-                                onClick = { () => this.onAddClick()}>Register
+                                //onClick = { () => this.onAddClick()}
+                                >Register
                             </button>
                         </div>
                     </div>
