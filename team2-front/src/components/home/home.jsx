@@ -5,7 +5,7 @@ import './home.css';
 export class Home extends React.Component{ 
 
 render(){
-      return <div className = "jumbotron jumbotron-fluid ">
+      return <div className = "jumbotron jumbotron-fluid mb-0">
     <Container className = "justify-content-center my-5 container-fluid mt-0 pt-0 bt-0">
       <Row className = "justify-content-center">
             <h1> Project Tracker</h1>
