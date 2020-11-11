@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './register.css'
+import NavBar from '../contractor/navabar'
 
 class Register extends Component {
     state = { 
@@ -15,6 +16,7 @@ class Register extends Component {
 
         return (  
             <React.Fragment>
+                <NavBar/>
                 <div className = "jumbotron">
                     <header className = "display-4 text-center font-weight-bold text-white mt-5">New Account</header>
                     <div className="card-fluid col-8 mt-4 mx-auto">
