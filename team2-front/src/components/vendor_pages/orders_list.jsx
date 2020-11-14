@@ -32,10 +32,7 @@ export const OrdersList = props =>
                         <Link to={'details/' + order.id}  className="btn btn-primary">Details</Link>
                         </td>
                         <td>
-                            <button type="button"
-                                    className="btn btn-primary btn-sm">
-                                Update
-                            </button>
+                        <Link to={'edit/' + order.id}  className="btn btn-primary">Update</Link>
                         </td>
 
                     </tr>)
