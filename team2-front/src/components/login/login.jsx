@@ -3,7 +3,7 @@ import LoginForm from './loginForm'
 import Header from './header'
 import "./login.css"
 
-class Login extends Component {
+export class Login extends Component {
     state = {  
     }
     render() { 
