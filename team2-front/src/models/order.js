@@ -1,5 +1,6 @@
 export class Order{
-    constructor(customer, datePlaced,shipped,completed,dateCompleted, productQuantity){
+    constructor(id, customer, datePlaced,shipped,completed,dateCompleted, productQuantity){
+        this.id = id;
         this.customer = customer;
         this.datePlaced = datePlaced;
         this.shipped = shipped;
