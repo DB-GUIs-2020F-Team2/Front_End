@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export const OrdersList = props => 
     <>
@@ -28,18 +29,10 @@ export const OrdersList = props =>
                         <td>{order.completed ? 'Y' : 'N'}</td>
 
                         <td>
-                            <button type="button"
-                                    className="btn btn-primary btn-sm">
-                                Details 
-
-                            </button> 
+                        <Link to={'details/' + order.id}  className="btn btn-primary">Details</Link>
                         </td>
                         <td>
-                        
-                            <button type="button"
-                                    className="btn btn-primary btn-sm">
-                                Update
-                            </button>
+                        <Link to={'edit/' + order.id}  className="btn btn-primary">Update</Link>
                         </td>
 
                     </tr>)
@@ -70,14 +63,9 @@ export const OrdersList = props =>
                             {order.customer}
                         </td>
                         <td>{order.dateCompleted}</td>
-
                         <td>
-                            <button type="button"
-                                    className="btn btn-primary btn-sm">
-                                Details 
-
-                            </button> 
-                        </td>
+                        <Link to={'details/' + order.id}  className="btn btn-primary">Details</Link>
+                        </td> 
 
                     </tr>)
             }

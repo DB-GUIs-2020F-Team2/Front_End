@@ -5,11 +5,17 @@ import { Order } from '../../models/order';
 export class VendorDashboard extends React.Component{
 
 state = {
-    currentOrders: [new Order("Sue", 10, "Y", "Y", -1,"dictionary"),
-        new Order("Bob", 9, "N", "N", -1,"dictionary also")],
-    pastOrders: [new Order("Paul", 4, "Y", "Y", 1,"dictionary"),
-        new Order("Louisa", 1, "Y", "Y", 1,"dictionary also")]
+    /*orders : [new Order(1,"Sue", 10, "Y", "Y", -1,{"one":5, "four":2, "twenty one": 1}),
+        new Order(2,"Bob", 9, "N", "N", -1,"dictionary also"),
+    new Order(3,"Paul", 4, "Y", "Y", 1,"dictionary"),
+        new Order(4,"Louisa", 1, "Y", "Y", 1,"dictionary also")],*/ 
+
+    currentOrders: [new Order(1,"Sue", 10, "Y", "Y", -1,{"one":5, "four":2, "twenty one": 1}),
+        new Order(2,"Bob", 9, "N", "N", -1,"dictionary also")],
+    pastOrders: [new Order(3,"Paul", 4, "Y", "Y", 1,"dictionary"),
+        new Order(4,"Louisa", 1, "Y", "Y", 1,"dictionary also")]
 }
+
 
 
 render(){
@@ -17,7 +23,5 @@ render(){
         <h1>Vendor Dashboard </h1> 
         <OrdersList currentOrders = { this.state.currentOrders} pastOrders  = {this.state.pastOrders} />
     </div> 
-
 }
-
 }
