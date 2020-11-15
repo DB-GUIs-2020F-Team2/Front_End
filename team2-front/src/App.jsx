@@ -11,7 +11,7 @@ function App() {
     <Switch>
       { ROUTES.map((route, index) => <Route key={ index } { ...route }></Route>) }
     </Switch>
-  </Router>;
+  </Router>
   );
 }
 

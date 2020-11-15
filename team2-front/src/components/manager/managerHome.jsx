@@ -8,7 +8,7 @@ import Contracts from './contracts'
 import Calendar from './calendar'
 import './managerHome.css'
 
-class ManagerHome extends Component {
+export class ManagerHome extends Component {
     state = { 
         view: 5
      };
