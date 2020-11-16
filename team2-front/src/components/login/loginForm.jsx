@@ -8,7 +8,7 @@ class LoginForm extends Component {
             <div className = "row-12 align-self-center">
                 <div id = "loginForm" className = "mt-5 mb-5 border bg-white container-fluid col-7 align-self-center">
                     <h2 className = "p-2 banner">Login</h2>
-                    <form className = "">
+                    <form className = "" action = "http://localhost:3000/manager">
                         <div className = "">
                             <label htmlFor = "username" className = "m-2">Username</label>
                             <input type = "text" id = "username"></input>
@@ -18,7 +18,7 @@ class LoginForm extends Component {
                             <input type = "password"></input>
                         </div>
                         <div>
-                            <button type = "button" className = "submit m-2 login">Login</button>
+                            <button type = "submit" className = "submit m-2 login">Login</button>
                         </div>
                     </form>
                 </div>
