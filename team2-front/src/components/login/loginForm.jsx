@@ -2,16 +2,19 @@ import React, { Component } from 'react';
 import "./loginForm.css"
 import { sha256 } from 'js-sha256';
 import axios from 'axios';
+import { Redirect } from 'react-router-dom';
 
 class LoginForm extends Component {
 
     constructor(){
+        super();
         this.state = {
             username: '',
             password: '',
             userType: '',
             redirect: ''
         }
+        this.login = this.login.bind(this)
     }
 
     getUsername(e){
@@ -30,6 +33,7 @@ class LoginForm extends Component {
     }
 
     goodLogin(){
+        alert('Welcome')
         this.setState({redirect: true})
     }
 
@@ -57,14 +61,26 @@ class LoginForm extends Component {
                     <form className = "" action = "http://localhost:3000/manager">
                         <div className = "">
                             <label htmlFor = "username" className = "m-2">Username</label>
-                            <input type = "text" id = "username"></input>
+                            <input type = "text" id = "username" onChange = {(e) => this.setState({username: e.target.value})}></input>
                         </div>
                         <div>
                             <label htmlFor = "password" className = "m-2">Password </label>
-                            <input type = "password"></input>
+                            <input type = "password" onChange = {(e) => this.setState({password: e.target.value})}></input>
+                        </div>
+                        <div className = "">
+                            <label htmlFor = "usertype" className = "m-2">Department</label>
+                            <select type = "text" id = "usertype" onChange = {(e) => this.setState({userType: e.target.value})}>
+                                <option value = 'Manager'>Manager</option>
+                                <option value = 'Contractor'>Contractor</option>
+                                <option value = 'Vendor'>Vendor</option>
+                            </select>
                         </div>
                         <div>
-                            <button type = "submit" className = "submit m-2 login">Login</button>
+                            <button type = "button" className = "submit m-2 login" onClick = {this.login}>Login</button>
+                                {this.state.redirect ? 
+                                    <Redirect to={`/${this.state.userType}/`}/>:
+                                    <Redirect to={'/home'}/>
+                                }
                         </div>
                     </form>
                 </div>
