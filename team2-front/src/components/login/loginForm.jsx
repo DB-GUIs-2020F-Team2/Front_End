@@ -1,8 +1,54 @@
 import React, { Component } from 'react';
 import "./loginForm.css"
+import { sha256 } from 'js-sha256';
+import axios from 'axios';
 
 class LoginForm extends Component {
-    state = {  }
+
+    constructor(){
+        this.state = {
+            username: '',
+            password: '',
+            userType: '',
+            redirect: ''
+        }
+    }
+
+    getUsername(e){
+        var value = e.target.value;
+        this.setState({username: value})
+    }
+
+    getPassword(e){
+        var value = e.target.value;
+        this.setState({password: value})
+    }
+
+    failedLogin(){
+        alert('Login Failed, try again')
+        this.setState({redirect: false})
+    }
+
+    goodLogin(){
+        this.setState({redirect: true})
+    }
+
+    login() {
+        let pass = this.state.password;
+        pass = sha256(pass);
+        axios.post('http://localhost:8000/verifyUser', {username: this.state.username, password: pass})
+                    .then(response => {
+                        if (response.data === 0) {
+                            this.failedLogin()
+                        }
+                        else {
+                            console.log(response.data)
+                            this.goodLogin(response.data)
+                        }
+        })
+
+    }
+
     render() { 
         return (  
             <div className = "row-12 align-self-center">
