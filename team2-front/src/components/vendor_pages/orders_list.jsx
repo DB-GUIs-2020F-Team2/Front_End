@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './order_list.css';
 
 export const OrdersList = props => 
     <>
     <h2>  Current Orders </h2>
-    <table className = "table">
+    <table className = "table table-condensed table-striped">
         <thead>
             <tr>
                 <th>Customer</th>
@@ -18,26 +19,30 @@ export const OrdersList = props =>
         </thead>
 
         <tbody>
-            {
-                props.currentOrders.map(order =>
-                    <tr key={order.id}>
-                        <td>
-                            {order.customer}
-                        </td>
-                        <td>{order.datePlaced}</td>
-                        <td >{order.shipped ? 'Y' : 'N'}</td>
-                        <td>{order.completed ? 'Y' : 'N'}</td>
 
-                        <td>
-                        <Link to={'details/' + order.id}  className="btn btn-primary">Details</Link>
-                        </td>
-                        <td>
-                        <Link to={'edit/' + order.id}  className="btn btn-primary">Update</Link>
-                        </td>
+        {
+                props.Orders.map(order =>               
+                    !order.completed && 
+                        <tr key={order.id}>
+                            <td>
+                                {order.customer}
+                            </td>
+                            <td>{order.datePlaced}</td>
+                            <td> {order.shipped ? 'Yes' : 'No'} </td>
+                            <td>{order.completed ? 'Yes' : 'No'} </td>
 
-                    </tr>)
-            }
-        </tbody>
+                            <td>
+                            <Link to={'details/' + order.id}  className="btn btn-primary">Details</Link>
+                            </td>
+                            <td>
+                            <Link to={'edit/' + order.id}  className="btn btn-primary" onShipped={ () => this.onShippedClicked(order)}>Update</Link>
+                            </td>
+                        </tr>)
+
+                    
+                
+            }      
+            </tbody>       
         
     </table> 
 
@@ -45,7 +50,7 @@ export const OrdersList = props =>
 
 
     <h2> Past Orders </h2> 
-    <table className = "table">
+    <table className = "table table-condensed table-striped">
         <thead>
             <tr>
                 <th>Customer</th>
@@ -57,8 +62,8 @@ export const OrdersList = props =>
 
         <tbody>
             {
-                props.pastOrders.map(order =>
-                    <tr key={order.id}>
+                props.Orders.map(order =>
+                    order.completed && <tr key={order.id}>
                         <td>
                             {order.customer}
                         </td>
