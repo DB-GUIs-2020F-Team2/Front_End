@@ -77,10 +77,7 @@ class LoginForm extends Component {
                         </div>
                         <div>
                             <button type = "button" className = "submit m-2 login" onClick = {this.login}>Login</button>
-                                {this.state.redirect ? 
-                                    <Redirect to={`/${this.state.userType}/`}/>:
-                                    <Redirect to={'/home'}/>
-                                }
+                                
                         </div>
                     </form>
                 </div>
