@@ -95,7 +95,7 @@ class Register extends Component {
                             <button 
                                 type = "button "
                                 className="btn btn-primary btn-lg col-3 m-3"
-                                //onClick = { () => this.onAddClick()}
+                                //onClick = { () => this.onAddClick()} -> takes you to login page
                                 >Register
                             </button>
                         </div>
