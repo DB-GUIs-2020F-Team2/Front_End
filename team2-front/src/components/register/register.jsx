@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './register.css'
 import NavBar from '../contractor/navabar'
 
-class Register extends Component {
+export class Register extends Component {
     state = { 
         userName: '',
         password: '',
@@ -17,7 +18,7 @@ class Register extends Component {
         return (  
             <React.Fragment>
                 <NavBar/>
-                <div className = "jumbotron">
+                <div className = "register jumbotron">
                     <header className = "display-4 text-center font-weight-bold text-white mt-5">New Account</header>
                     <div className="card-fluid col-8 mt-4 mx-auto">
                             <div className="row justify-content-center">
@@ -92,12 +93,8 @@ class Register extends Component {
                         </div> 
 
                         <div className = "row justify-content-center">
-                            <button 
-                                type = "button "
-                                className="btn btn-primary btn-lg col-3 m-3"
-                                //onClick = { () => this.onAddClick()} -> takes you to login page
-                                >Register
-                            </button>
+                        <Link to='/login'  className="btn btn-primary">Register</Link>
+                            
                         </div>
                     </div>
 
@@ -109,4 +106,3 @@ class Register extends Component {
     }
 }
  
-export default Register;

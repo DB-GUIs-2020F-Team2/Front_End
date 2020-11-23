@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {Container, Row} from 'react-bootstrap';
 import './home.css';
 
@@ -17,15 +18,11 @@ render(){
 
       <Row className = "justify-content-center mt-4">
             {/*  add this back when props functions are set up and other pages are made <button onClick={() => this.onLoginClick()}  */}
-            <button type="button" className = "btn btn-primary">
-            Login
-            </button>
+            <Link to='login/'  className="btn btn-primary">Login</Link>
       </Row>
 
       <Row className = "justify-content-center mt-4">
-            <button type="button" className = "btn btn-primary">
-          Register
-            </button>
+      <Link to='register/'  className="btn btn-primary">Register</Link> 
       </Row> 
       
     </Container>
